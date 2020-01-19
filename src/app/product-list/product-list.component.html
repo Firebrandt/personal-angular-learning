@@ -1,0 +1,25 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title] = "product.name + ' details'"> <!--lets me use a property value in a template-->
+      {{ product.name }} <!--this interpolation thing renders a property's value as text.-->
+    </a>
+  </h3>
+  <p *ngIf = "product.description"> <!-- can use a lot of commands with *nfIf prefix, is nice. --> 
+    Description: {{ product.description }} 
+  </p>
+
+<button (click) = "share()"> <!-- can bind functions/methods to events, different for every element. --> 
+  Share
+</button>
+<!-- defines the product-alerts component as a child of this one, using its selector. Sets product in product-alerts to the one referred to in product-list. -->
+
+<app-product-alerts
+  [product]="product"
+  (notify) = "Notify()">
+</app-product-alerts>
+
+</div>
+
+<!-- components are basically just sections of UI in which you can define functions, data, styles and content and keep it separate from other UI sections. Organizational tool similar to a div in HTML. --> 

@@ -1,0 +1,4 @@
+<p *ngIf="product.price > 700">
+  <button (click) = "notify.emit()">Notify Me</button> <!-- behaviour not defined here, because parent components are the ones that act on events created by their child. --> 
+  
+</p>
